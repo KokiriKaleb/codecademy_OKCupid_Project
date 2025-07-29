@@ -26,10 +26,10 @@ The initial phase focused on cleaning the raw data and understanding the relatio
 Analysis revealed that the strongest predictors of age were features related to a user's life stage.
 
 - **Education:** A user's education level showed a clear correlation with age. For example, users "working on" a degree were consistently younger than those who had "graduated from" the same program.
-  ![Education vs. Age Box Plot](Age_Distribution_by_Education_Level.png)
+  ![Education vs. Age Box Plot](images/Age_Distribution_by_Education_Level.png)
 
 - **Offspring:** Similarly, a user's parental status was a dominant predictor. Users who "have kids" were significantly older than those who "don't have kids."
-  ![Offspring vs. Age Box Plot](Age_Distribution_by_Offspring_Status.png)
+  ![Offspring vs. Age Box Plot](images/Age_Distribution_by_Offspring_Status.png)
 
 ---
 
@@ -66,9 +66,9 @@ Interestingly, the simpler Ridge model outperformed the more complex Random Fore
 
 ### Feature Importance
 
-An analysis of the Random Forest model revealed which features it found most predictive. This confirmed our EDA findings, with `offspring_cleaned_has kids` being the single most important feature.
+An analysis of the Random Forest model revealed which features it found most predictive. This confirmed our EDA findings, with `images/offspring_cleaned_has kids` being the single most important feature.
 
-![Feature Importance Plot](Feature_Importance.png)
+![Feature Importance Plot](images/Feature_Importance.png)
 
 ---
 
