@@ -18,33 +18,32 @@ def home():
 @app.route('/predict', methods=['POST'])
 def predict():
     # Get user input from the form
-    input_data = {
-        'education': [request.form['education']],
-        'offspring': [request.form['offspring']],
-        'essay0': [request.form['essay0']]
-    }
-    input_df = pd.DataFrame(input_data)
+    form_data = request.form.to_dict()
+    input_df = pd.DataFrame([form_data])
 
     # --- Feature Engineering for the input ---
-    # Create 'all_essays'
-    input_df['all_essays'] = input_df['essay0'] # Simplified for the app
+    input_df['all_essays'] = input_df['essay0']
 
     # Create a DataFrame with all the model's feature columns, initialized to 0
     processed_input = pd.DataFrame(columns=feature_names, index=[0])
     processed_input.fillna(0, inplace=True)
 
-    # Simple text features
+    # Fill in all known values from the form and add reasonable defaults
+    # Numerical features
+    processed_input['height'] = float(input_df.loc[0, 'height'])
+    processed_input['income'] = int(input_df.loc[0, 'income'])
     processed_input['essay_length'] = len(input_df.loc[0, 'all_essays'])
     processed_input['word_count'] = len(input_df.loc[0, 'all_essays'].split())
+    # Hardcode reasonable defaults for other numerical features
+    processed_input['last_online_year'] = 2012 
+    processed_input['last_online_month'] = 6
+    processed_input['last_online_dayofweek'] = 3
 
     # One-hot encode the user's input
-    # Note: This is a simplified version of the full feature engineering
-    # For education
     edu_feature = 'education_' + input_df.loc[0, 'education']
     if edu_feature in processed_input.columns:
         processed_input[edu_feature] = 1
 
-    # For offspring
     offspring_feature = 'offspring_cleaned_' + input_df.loc[0, 'offspring']
     if offspring_feature in processed_input.columns:
         processed_input[offspring_feature] = 1
