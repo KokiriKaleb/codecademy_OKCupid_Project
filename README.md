@@ -66,7 +66,7 @@ Interestingly, the simpler Ridge model outperformed the more complex Random Fore
 
 ### Feature Importance
 
-An analysis of the Random Forest model revealed which features it found most predictive. This confirmed our EDA findings, with `images/offspring_cleaned_has kids` being the single most important feature.
+An analysis of the Random Forest model revealed which features it found most predictive. This confirmed our EDA findings, with `offspring_cleaned_has kids` being the single most important feature.
 
 ![Feature Importance Plot](images/Feature_Importance.png)
 
