@@ -76,4 +76,6 @@ An analysis of the Random Forest model revealed which features it found most pre
 
 This project successfully developed a model capable of predicting a user's age with a **mean absolute error of ~4.8 years**. The key takeaway is that a user's life stage—primarily their parental and educational status—provides the most significant signal for predicting their age. This project demonstrates a complete, end-to-end data science workflow, from data cleaning and exploration to feature engineering and final model evaluation.
 
-**[Live Demo](https://codecademy-okcupid-project.onrender.com)**
+**[Live Demo](https://codecademy-okcupid-project.onrender.com)** | **[View Presentation]([https://your-google-slides-link-here](https://docs.google.com/presentation/d/1fEvDoQaLvLCqVnlATZuFn5qokbQzninTDeZ5GN3q8So/edit?usp=sharing))**
+
+
